@@ -1,0 +1,23 @@
+import React, { useContext } from 'react'
+import { assets } from '../assets/assets'
+import { AppContext } from '../context/AppContext'
+
+const Header = () => {
+
+  const {userData} = useContext(AppContext)
+
+  return (
+    <div className='flex flex-col items-center mt-20 px-4 text-center text-gray-800'>
+      <img src={assets.header_img} alt="" 
+      className='w-18 h-36 rounded-full mb-6'/>
+      <h1 className='flex items-center gap-2 text-xl sm:text-3xl font-medium mb-2'>Hey! {userData ? userData.name : 'Developer'} 
+        <img className='w-8 aspect-square' src={assets.hand_wave} alt="" /></h1>
+      <h2 className='text-3xl sm:text-5xl font-semibold mb-4'>Welcome to our app</h2>
+      <p className='mb-8 max-w-md'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum quidem quae, obcaecati dignissimos at illum.</p>
+      <button className='flex items-center gap-2 border border-gray-500 bg-blue-700 rounded-full px-5 py-2 text-white hover:bg-pink-100
+       hover:text-gray-800 transition-all duration-500'>Get started</button>
+    </div>
+  )
+}
+
+export default Header
